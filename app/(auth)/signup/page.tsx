@@ -1,7 +1,7 @@
 const SignUpPage = ()=>{
   return(
     <div>
-      This is SIgnup page
+      this is login page 
     </div>
   )
 }
