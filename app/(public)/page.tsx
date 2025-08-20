@@ -88,16 +88,16 @@ export default function Home() {
           </div>
         </section>
         <div className="absolute inset-y-0 left-0 h-full w-px bg-neutral-200/80 dark:bg-neutral-800/80">
-          <div className="absolute top-1/4 h-90 w-0.5 bg-gradient-to-b from-transparent via-blue-500 to-transparent" />
+          <div className="absolute top-1/4 h-90 w-0.5 bg-gradient-to-b from-transparent via-[#d97757] to-transparent" />
         </div>
         <div className="absolute inset-y-0 right-0 h-full w-px bg-neutral-200/80 dark:bg-neutral-800/80">
-          <div className="absolute top-1/4 h-90 w-0.5 bg-gradient-to-b from-transparent via-blue-500 to-transparent" />
+          <div className="absolute top-1/4 h-90 w-0.5 bg-gradient-to-b from-transparent via-[#d97757] to-transparent" />
         </div>
         <div className="absolute inset-x-0 bottom-0 h-px w-full bg-neutral-200/80 dark:bg-neutral-800/80">
-          <div className="absolute left-1/2 transform -translate-x-1/2 h-0.5 w-50 bg-gradient-to-r from-transparent via-blue-500 to-transparent" />
+          <div className="absolute left-1/2 transform -translate-x-1/2 h-0.5 w-50 bg-gradient-to-r from-transparent via-[#d97757] to-transparent" />
         </div>
         <div className="absolute inset-x-0 top-0 h-px w-full bg-neutral-200/80 dark:bg-neutral-800/80">
-          <div className="absolute left-1/2 transform -translate-x-1/2 h-0.5 w-50 bg-gradient-to-r from-transparent via-blue-500 to-transparent" />
+          <div className="absolute left-1/2 transform -translate-x-1/2 h-0.5 w-50 bg-gradient-to-r from-transparent via-[#d97757] to-transparent" />
         </div>
       </section>
     </>
