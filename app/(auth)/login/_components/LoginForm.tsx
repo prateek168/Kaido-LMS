@@ -28,7 +28,7 @@ const LoginForm = () => {
         callbackURL: "/",
         fetchOptions: {
           onSuccess: () => {
-            toast.success("Signed with Github, you will be redirected...");
+            toast.success("Signing in with GitHub, you will be redirected...");
           },
           onError: (error) => {
             toast.error(error.error.message);
