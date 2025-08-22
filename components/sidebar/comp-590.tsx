@@ -4,25 +4,25 @@ import {
   HouseIcon,
   PlusIcon,
   SearchIcon,
-} from "lucide-react"
+} from "lucide-react";
 
-import NotificationMenu from "@/components/notification-menu"
-import TeamSwitcher from "@/components/team-switcher"
-import UserMenu from "@/components/user-menu"
-import { Button } from "@/components/ui/button"
+import NotificationMenu from "@/components/sidebar/notification-menu";
+import TeamSwitcher from "@/components/sidebar/team-switcher";
+import UserMenu from "@/components/sidebar/user-menu";
+import { Button } from "@/components/ui/button";
 import {
   NavigationMenu,
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
-} from "@/components/ui/navigation-menu"
+} from "@/components/ui/navigation-menu";
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "@/components/ui/popover"
+} from "@/components/ui/popover";
 
-const teams = ["Acme Inc.", "Origin UI", "Junon"]
+const teams = ["Acme Inc.", "Origin UI", "Junon"];
 
 // Navigation links array to be used in both desktop and mobile menus
 const navigationLinks = [
@@ -30,7 +30,7 @@ const navigationLinks = [
   { href: "#", label: "Explore", icon: CompassIcon },
   { href: "#", label: "Write", icon: FeatherIcon },
   { href: "#", label: "Search", icon: SearchIcon },
-]
+];
 
 export default function Component() {
   return (
@@ -77,7 +77,7 @@ export default function Component() {
               <NavigationMenu className="max-w-none *:w-full">
                 <NavigationMenuList className="flex-col items-start gap-0 md:gap-2">
                   {navigationLinks.map((link, index) => {
-                    const Icon = link.icon
+                    const Icon = link.icon;
                     return (
                       <NavigationMenuItem key={index} className="w-full">
                         <NavigationMenuLink
@@ -92,7 +92,7 @@ export default function Component() {
                           <span>{link.label}</span>
                         </NavigationMenuLink>
                       </NavigationMenuItem>
-                    )
+                    );
                   })}
                 </NavigationMenuList>
               </NavigationMenu>
@@ -104,7 +104,7 @@ export default function Component() {
         <NavigationMenu className="max-md:hidden">
           <NavigationMenuList className="gap-2">
             {navigationLinks.map((link, index) => {
-              const Icon = link.icon
+              const Icon = link.icon;
               return (
                 <NavigationMenuItem key={index}>
                   <NavigationMenuLink
@@ -116,7 +116,7 @@ export default function Component() {
                     <span className="sr-only">{link.label}</span>
                   </NavigationMenuLink>
                 </NavigationMenuItem>
-              )
+              );
             })}
           </NavigationMenuList>
         </NavigationMenu>
@@ -135,5 +135,5 @@ export default function Component() {
         </div>
       </div>
     </header>
-  )
+  );
 }
