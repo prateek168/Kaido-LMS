@@ -1,64 +1,12 @@
 "use client";
 import { Badge } from "@/components/ui/badge";
 import { Button, buttonVariants } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { ThemeToggle } from "@/components/ui/themeToggle";
-import { authClient } from "@/lib/auth-client";
-import { motion } from "motion/react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { title } from "process";
-import { toast } from "sonner";
-
-interface featuresTypes {
-  title: string;
-  description: string;
-  icon: string;
-}
-
-const features: featuresTypes[] = [
-  {
-    title: "Comprehensive Courses",
-    description:
-      "Access a wide range of carefully curated courses designed by industry experts.",
-    icon: "📚",
-  },
-  {
-    title: "Interactive Learning",
-    description:
-      "Engage with interactive content, quizzes and assignments to enhance your learning experience.",
-    icon: "🎮",
-  },
-  {
-    title: "Progress Tracking",
-    description:
-      "Monitor your progress and achievements with detailed analytics and personalized dashboards.",
-    icon: "📊",
-  },
-  {
-    title: "Community Support",
-    description:
-      "Join a vibrant community of learners and instructors to collaborate and share knowledge.",
-    icon: "👥",
-  },
-];
-
+import HeroSectionSignInButton from "./_components/HeroSectionSignInButton";
+import { authClient } from "@/lib/auth-client";
 export default function Home() {
   const router = useRouter();
-  const { data: session } = authClient.useSession();
-
-  
-  async function signOut() {
-    await authClient.signOut({
-      fetchOptions: {
-        onSuccess: () => {
-          router.push("/login");
-          toast.success;
-          ("Signed out Successfully");
-        },
-      },
-    });
-  }
   return (
     <>
       <section className="relative py-20">
@@ -81,9 +29,7 @@ export default function Home() {
               >
                 Explore Courses
               </Link>
-              <Button size="lg" variant="outline">
-                <Link href={"/login"}>Sign In</Link>
-              </Button>
+              <HeroSectionSignInButton />
             </div>
           </div>
         </section>

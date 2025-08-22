@@ -43,7 +43,7 @@ const VerifyRequest = () => {
         otp: otp,
         fetchOptions: {
           onSuccess: () => {
-            toast.success("Email Verified");
+            toast.success("Signed In Successfully");
             router.push("/"); 
           },
           onError: () => {
