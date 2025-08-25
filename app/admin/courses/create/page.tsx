@@ -30,9 +30,14 @@ import { Input } from "@/components/ui/input";
 import { useForm } from "react-hook-form";
 import slugify from "slugify";
 import { Textarea } from "@/components/ui/textarea";
-import { Select, SelectItem, SelectTrigger } from "@/components/ui/select";
-import { SelectContent, SelectValue } from "@radix-ui/react-select";
-import { categories } from "@arcjet/next";
+// Fix: Import all Select components from shadcn/ui
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 
 export default function CourseCreationPage() {
   const form = useForm<CourseSchemaType>({
@@ -44,15 +49,17 @@ export default function CourseCreationPage() {
       price: 0,
       duration: 0,
       level: "Beginner",
-      category: "Health & Fitness",
+      category: "Others",
       smallDescription: "",
       slug: "",
       status: "Draft",
     },
   });
+
   function onSubmit(values: z.infer<typeof CourseSchema>) {
     console.log(values);
   }
+
   return (
     <>
       <div className="flex items-center gap-4">
@@ -170,10 +177,10 @@ export default function CourseCreationPage() {
                       <FormLabel>Category</FormLabel>
                       <Select
                         onValueChange={field.onChange}
-                        defaultValue={field.value}
+                        value={field.value}
                       >
                         <FormControl>
-                          <SelectTrigger className="w-full">
+                          <SelectTrigger>
                             <SelectValue placeholder="Select Category" />
                           </SelectTrigger>
                         </FormControl>
@@ -197,17 +204,17 @@ export default function CourseCreationPage() {
                       <FormLabel>Level</FormLabel>
                       <Select
                         onValueChange={field.onChange}
-                        defaultValue={field.value}
+                        value={field.value}
                       >
                         <FormControl>
-                          <SelectTrigger className="w-full">
+                          <SelectTrigger>
                             <SelectValue placeholder="Select level" />
                           </SelectTrigger>
                         </FormControl>
                         <SelectContent>
-                          {courseLevels.map((category) => (
-                            <SelectItem key={category} value={category}>
-                              {category}
+                          {courseLevels.map((level) => (
+                            <SelectItem key={level} value={level}>
+                              {level}
                             </SelectItem>
                           ))}
                         </SelectContent>
@@ -251,19 +258,16 @@ export default function CourseCreationPage() {
                 render={({ field }) => (
                   <FormItem className="w-full">
                     <FormLabel>Status</FormLabel>
-                    <Select
-                      onValueChange={field.onChange}
-                      defaultValue={field.value}
-                    >
+                    <Select onValueChange={field.onChange} value={field.value}>
                       <FormControl>
-                        <SelectTrigger className="w-full">
+                        <SelectTrigger>
                           <SelectValue placeholder="Select Status" />
                         </SelectTrigger>
                       </FormControl>
                       <SelectContent>
-                        {CourseStatus.map((category) => (
-                          <SelectItem key={category} value={category}>
-                            {category}
+                        {CourseStatus.map((status) => (
+                          <SelectItem key={status} value={status}>
+                            {status}
                           </SelectItem>
                         ))}
                       </SelectContent>
