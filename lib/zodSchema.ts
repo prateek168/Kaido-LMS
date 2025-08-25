@@ -14,6 +14,7 @@ export const courseCategories = [
   "Health & Fitness",
   "Music",
   "Teaching",
+  "Others"
 ] as const;
 export const CourseSchema = z.object({
   title: z
