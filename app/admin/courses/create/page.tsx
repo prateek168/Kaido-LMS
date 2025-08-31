@@ -38,6 +38,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { RichTextEditor } from "@/components/rich-text-editor/Editor";
 
 export default function CourseCreationPage() {
   const form = useForm<CourseSchemaType>({
@@ -93,6 +94,7 @@ export default function CourseCreationPage() {
                     <FormControl>
                       <Input placeholder="Title" {...field} />
                     </FormControl>
+                    <FormMessage />
                   </FormItem>
                 )}
               />
@@ -137,6 +139,7 @@ export default function CourseCreationPage() {
                         {...field}
                       />
                     </FormControl>
+                    <FormMessage />
                   </FormItem>
                 )}
               />
@@ -147,12 +150,14 @@ export default function CourseCreationPage() {
                   <FormItem className="w-full">
                     <FormLabel>Description</FormLabel>
                     <FormControl>
-                      <Textarea
+                      <RichTextEditor/>
+                      {/* <Textarea
                         placeholder="Description"
                         className="min-h-[120px]"
                         {...field}
-                      />
+                      /> */}
                     </FormControl>
+                    <FormMessage />
                   </FormItem>
                 )}
               />
@@ -165,6 +170,7 @@ export default function CourseCreationPage() {
                     <FormControl>
                       <Input placeholder="thumbnail url" {...field} />
                     </FormControl>
+                    <FormMessage />
                   </FormItem>
                 )}
               />
@@ -236,6 +242,7 @@ export default function CourseCreationPage() {
                           {...field}
                         />
                       </FormControl>
+                      <FormMessage />
                     </FormItem>
                   )}
                 />
