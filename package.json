@@ -49,6 +49,8 @@
     "@tanstack/react-table": "^8.21.3",
     "@tiptap/extension-bullet-list": "^3.3.0",
     "@tiptap/extension-heading": "^3.3.0",
+    "@tiptap/extension-list-item": "^3.3.0",
+    "@tiptap/extension-ordered-list": "^3.3.0",
     "@tiptap/extension-strike": "^3.3.0",
     "@tiptap/extension-text-align": "^3.3.0",
     "@tiptap/pm": "^3.3.0",
@@ -83,6 +85,7 @@
   "devDependencies": {
     "@eslint/eslintrc": "^3",
     "@tailwindcss/postcss": "^4",
+    "@tailwindcss/typography": "^0.5.16",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",

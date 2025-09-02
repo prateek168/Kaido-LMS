@@ -11,9 +11,9 @@ import {
 } from "lucide-react";
 import {
   Tooltip,
-  TooltipContent,
   TooltipProvider,
   TooltipTrigger,
+  TooltipContent,
 } from "../ui/tooltip";
 import { Toggle } from "../ui/toggle";
 import { cn } from "@/lib/utils";
@@ -49,6 +49,7 @@ export function Menubar({ editor }: iAppProps) {
             </TooltipTrigger>
             <TooltipContent>Bold</TooltipContent>
           </Tooltip>
+
           {/* Italic */}
           <Tooltip>
             <TooltipTrigger asChild>
@@ -67,6 +68,7 @@ export function Menubar({ editor }: iAppProps) {
             </TooltipTrigger>
             <TooltipContent>Italic</TooltipContent>
           </Tooltip>
+
           {/* Strike */}
           <Tooltip>
             <TooltipTrigger asChild>
@@ -85,8 +87,10 @@ export function Menubar({ editor }: iAppProps) {
             </TooltipTrigger>
             <TooltipContent>Strikethrough</TooltipContent>
           </Tooltip>
+
           {/* Separator */}
           <div className="w-px h-6 bg-border mx-1" />
+
           {/* Heading 1 */}
           <Tooltip>
             <TooltipTrigger asChild>
@@ -106,6 +110,7 @@ export function Menubar({ editor }: iAppProps) {
             </TooltipTrigger>
             <TooltipContent>Heading 1</TooltipContent>
           </Tooltip>
+
           {/* Heading 2 */}
           <Tooltip>
             <TooltipTrigger asChild>
@@ -125,6 +130,7 @@ export function Menubar({ editor }: iAppProps) {
             </TooltipTrigger>
             <TooltipContent>Heading 2</TooltipContent>
           </Tooltip>
+
           {/* Heading 3 */}
           <Tooltip>
             <TooltipTrigger asChild>
@@ -144,8 +150,10 @@ export function Menubar({ editor }: iAppProps) {
             </TooltipTrigger>
             <TooltipContent>Heading 3</TooltipContent>
           </Tooltip>
+
           {/* Separator */}
           <div className="w-px h-6 bg-border mx-1" />
+
           {/* Bullet List */}
           <Tooltip>
             <TooltipTrigger asChild>
@@ -165,7 +173,6 @@ export function Menubar({ editor }: iAppProps) {
             </TooltipTrigger>
             <TooltipContent>Bullet List</TooltipContent>
           </Tooltip>
-          sperator left, right , center , button for undo and redo
         </div>
       </TooltipProvider>
     </div>

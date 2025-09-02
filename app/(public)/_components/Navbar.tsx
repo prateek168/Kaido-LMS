@@ -103,8 +103,15 @@ export function Navbar() {
                         <div className="px-3 py-2">
                           <UserDropdown
                             email={session.user.email}
-                            image={session.user.image || ""}
-                            name={session.user.name}
+                            image={
+                              session?.user.image ??
+                              `https://avatar.vercel.sh/${session?.user.name}`
+                            }
+                            name={
+                              session?.user.name && session.user.name.length > 0
+                                ? session.user.name
+                                : session?.user.email.split("@")[0]
+                            }
                           />
                         </div>
                       ) : (
