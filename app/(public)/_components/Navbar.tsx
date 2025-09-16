@@ -28,6 +28,11 @@ interface navigationItemsProps {
     "aria-hidden"?: boolean;
   }>;
 }
+const getDisplayName = (user: any) => {
+  return user?.name && user.name.length > 0
+    ? user.name
+    : user?.email.split("@")[0] || "";
+};
 
 const navigationItems: navigationItemsProps[] = [
   { name: "Home", href: "/", icon: Home },
@@ -37,7 +42,7 @@ const navigationItems: navigationItemsProps[] = [
 
 export function Navbar() {
   const { data: session, isPending } = authClient.useSession();
-
+  console.log(session?.user);
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container mx-auto px-4 md:px-6">
@@ -103,14 +108,12 @@ export function Navbar() {
                         <div className="px-3 py-2">
                           <UserDropdown
                             email={session.user.email}
+                            name={getDisplayName(session.user)}
                             image={
                               session?.user.image ??
-                              `https://avatar.vercel.sh/${session?.user.name}`
-                            }
-                            name={
-                              session?.user.name && session.user.name.length > 0
-                                ? session.user.name
-                                : session?.user.email.split("@")[0]
+                              `https://avatar.vercel.sh/${getDisplayName(
+                                session.user
+                              )}`
                             }
                           />
                         </div>
